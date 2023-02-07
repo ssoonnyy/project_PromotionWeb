@@ -1,0 +1,206 @@
+@charset "UTF-8";
+/*폰트*/
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap");
+/*공통*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img, video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+html, body {
+  font-size: 16px;
+}
+
+/*header*/
+.header {
+  display: flex;
+}
+.header > ul {
+  display: flex;
+  align-items: end;
+}
+.header > ul.header_lnb {
+  font-family: "Oswald", sans-serif;
+}
+.header > ul.header_gnb li a img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media all and (min-width: 320px) and (max-width: 800px) {
+  .header {
+    height: 55px;
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 5px;
+  }
+  .header::before {
+    content: " ";
+    width: 100%;
+    height: 20px;
+    background-color: #ccc;
+    position: absolute;
+    top: 0;
+  }
+  .header .header_lnb {
+    width: 33%;
+    order: 1;
+    justify-content: start;
+    position: relative;
+  }
+  .header .header_lnb > ul:nth-child(1) {
+    position: relative;
+    bottom: 0;
+    width: 2.03125rem;
+    height: 1.7875rem;
+    display: inline-block;
+    transition: all 0.4s;
+    box-sizing: border-box;
+    margin: 0 0 3px 5px;
+  }
+  .header .header_lnb > ul:nth-child(1) > span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    border-radius: 4px;
+    display: inline-block;
+    transition: all 0.4s;
+    box-sizing: border-box;
+  }
+  .header .header_lnb > ul:nth-child(1) > span:nth-child(1) {
+    top: 0;
+  }
+  .header .header_lnb > ul:nth-child(1) > span:nth-child(1) {
+    top: 14px;
+  }
+  .header .header_lnb > ul:nth-child(1) > span:nth-child(3) {
+    bottom: 0;
+  }
+  .header .header_lnb > ul:nth-child(1).active > span:nth-child(1) {
+    transform: translateY(0px) rotate(-45deg);
+  }
+  .header .header_lnb > ul:nth-child(1).active > span:nth-child(2) {
+    opacity: 0;
+  }
+  .header .header_lnb > ul:nth-child(1).active > span:nth-child(3) {
+    transform: translateY(-12px) rotate(45deg);
+  }
+  .header .header_lnb > ul:nth-child(2) {
+    display: none;
+    position: relative;
+    width: 100vw;
+    background-color: #fff;
+    transition: all 0.2s;
+  }
+  .header .header_lnb > ul:nth-child(2).openLnb {
+    position: absolute;
+    bottom: -249px;
+    display: flex;
+    flex-direction: column;
+  }
+  .header .header_lnb > ul:nth-child(2).openLnb > li {
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+    border-top: 1px solid #eee;
+  }
+  .header .header_logo {
+    order: 2;
+    width: 33%;
+    justify-content: center;
+  }
+  .header .header_logo > a {
+    width: 110px;
+  }
+  .header .header_gnb {
+    order: 3;
+    width: 33%;
+    justify-content: end;
+  }
+  .visual_main {
+    position: static;
+  }
+}
+@media all and (min-width: 801px) {
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 10000000000000000000;
+    box-sizing: border-box;
+    justify-content: space-between;
+  }
+  .header .header_logo {
+    max-width: 190px;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  .header .header_lnb {
+    width: 100%;
+  }
+  .header .header_lnb > ul:nth-child(2) {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+  }
+  .header .header_lnb > ul:nth-child(2) > li > a {
+    color: #000;
+    display: inline-block;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .header .header_lnb > ul:nth-child(2) > li > a:after {
+    display: block;
+    content: "";
+    border-bottom: solid 1px #ea2129;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+  }
+  .header .header_lnb > ul:nth-child(2) > li > a:hover:after {
+    transform: scaleX(1);
+  }
+  .header .header_gnb {
+    justify-content: space-evenly;
+    width: 12.5rem;
+  }
+  .visual_main {
+    position: absolute;
+    top: 0;
+  }
+}
+@media all and (min-width: 1024px) {
+  .header {
+    padding: 2.8125rem 10rem 0;
+  }
+  .header .header_logo {
+    min-width: 190px;
+  }
+}
+/*main*/
+.visual_main {
+  width: 100%;
+  height: 58.5625rem;
+  overflow: hidden;
+}
+.visual_main > video {
+  width: 100%;
+}
+
+/*# sourceMappingURL=/scss.6b84482b.css.map */
