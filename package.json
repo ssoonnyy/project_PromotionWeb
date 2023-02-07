@@ -4,13 +4,21 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "dev":"parcel ./index.html",
-    "build":"parcel build ./index.html"
+    "dev": "parcel ./index.html",
+    "build": "parcel build ./index.html",
+    "predeploy": "npm run build",  
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "parcel-bundler": "^1.12.5"
-  }
+    "gh-pages": "^5.0.0",
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.58.0",
+    "sass-loader": "^13.2.0",
+    "scss": "^0.2.4",
+    "scss-loader": "^0.0.1"
+  },
+  "homepage": "https://github.com/ssoonnyy/project_PromotionWeb/"
 }
