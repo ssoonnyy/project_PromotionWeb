@@ -16,13 +16,15 @@ a {
   color: black;
 }
 
-img, video {
+img,
+video {
   display: block;
   width: 100%;
   height: auto;
 }
 
-html, body {
+html,
+body {
   font-size: 16px;
 }
 
@@ -157,7 +159,7 @@ html, body {
   .header .header_lnb > ul:nth-child(2) {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: end;
   }
   .header .header_lnb > ul:nth-child(2) > li > a {
