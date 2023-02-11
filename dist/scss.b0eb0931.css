@@ -59,7 +59,7 @@ body {
 /* contents01 */
 .contents01 {
   width: 100%;
-  background-image: url(./images/modularstats-back.jpg);
+  background-image: url(/modularstats-back.2da0e286.jpg);
   background-attachment: fixed;
   background-repeat: repeat-y;
   background-position: 0 25rem;
@@ -305,4 +305,6 @@ body {
     height: 58.5625rem;
     overflow: hidden;
   }
-}/*# sourceMappingURL=index.css.map */
+}
+
+/*# sourceMappingURL=/scss.b0eb0931.css.map */

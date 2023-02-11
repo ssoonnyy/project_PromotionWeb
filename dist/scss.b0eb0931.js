@@ -117,150 +117,62 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/index_js.js":[function(require,module,exports) {
-document.addEventListener("DOMContentLoaded", function () {
-  var header = document.querySelector(".header");
-
-  /* 헤더 마우스 이벤트 */
-  header.addEventListener("mouseover", function () {
-    this.classList.add("bgChange");
-  });
-  header.addEventListener("mouseout", function () {
-    this.classList.remove("bgChange");
-  });
-
-  /* contents01 숫자카운팅 */
-  window.onscroll = function () {
-    con01Count();
-  };
-  function con01Count() {
-    var target = document.querySelector(".visual_main");
-    var targetHeight = target.offsetHeight;
-    if (document.body.scrollTop > targetHeight / 2 || document.documentElement.scrollTop > targetHeight / 2) {
-      var ballCount01 = document.querySelector(".num_box01 > .con01_count01");
-      var ballCount02 = document.querySelector(".num_box01 .con01_count02");
-      var driverCount01 = document.querySelector(".num_box02 > .con01_count01");
-      var driverCount02 = document.querySelector(".num_box02 .con01_count02");
-      var hybridsCount01 = document.querySelector(".num_box03 > .con01_count01");
-      var hybridsCount02 = document.querySelector(".num_box03 .con01_count02");
-      var utilityironCount01 = document.querySelector(".num_box04 > .con01_count01");
-      var utilityironCount02 = document.querySelector(".num_box04 .con01_count02");
-      var ironCount01 = document.querySelector(".num_box05 > .con01_count01");
-      var ironCount02 = document.querySelector(".num_box05 .con01_count02");
-      var wedgesCount01 = document.querySelector(".num_box06 > .con01_count01");
-      var wedgesCount02 = document.querySelector(".num_box06 .con01_count02");
-      var count1 = 0;
-      var count1sub = 0;
-      var count2 = 0;
-      var count2sub = 0;
-      var count3 = 0;
-      var count3sub = 0;
-      var count4 = 0;
-      var count4sub = 0;
-      var count5 = 0;
-      var count5sub = 0;
-      var count6 = 0;
-      var count6sub = 0;
-      var ballCounting01 = setInterval(function () {
-        if (count1 == 78) {
-          clearInterval(ballCounting01);
-          return false;
-        }
-        count1 += 1;
-        ballCount01.innerHTML = count1;
-      }, 20);
-      var ballCounting02 = setInterval(function () {
-        if (count1sub == 10) {
-          clearInterval(ballCounting02);
-          return false;
-        }
-        count1sub += 1;
-        ballCount02.innerHTML = count1sub;
-      }, 100);
-      var driverCounting01 = setInterval(function () {
-        if (count2 == 31) {
-          clearInterval(driverCounting01);
-          return false;
-        }
-        count2 += 1;
-        driverCount01.innerHTML = count2;
-      }, 20);
-      var driverCounting02 = setInterval(function () {
-        if (count2sub == 22) {
-          clearInterval(driverCounting02);
-          return false;
-        }
-        count2sub += 1;
-        driverCount02.innerHTML = count2sub;
-      }, 100);
-      var hybridsCounting01 = setInterval(function () {
-        if (count3 == 35) {
-          clearInterval(hybridsCounting01);
-          return false;
-        }
-        count3 += 1;
-        hybridsCount01.innerHTML = count3;
-      }, 20);
-      var hybridsCounting02 = setInterval(function () {
-        if (count3sub == 20) {
-          clearInterval(hybridsCounting02);
-          return false;
-        }
-        count3sub += 1;
-        hybridsCount02.innerHTML = count3sub;
-      }, 100);
-      var utilityironCounting01 = setInterval(function () {
-        if (count4 == 49) {
-          clearInterval(utilityironCounting01);
-          return false;
-        }
-        count4 += 1;
-        utilityironCount01.innerHTML = count4;
-      }, 20);
-      var utilityironCounting02 = setInterval(function () {
-        if (count4sub == 17) {
-          clearInterval(utilityironCounting02);
-          return false;
-        }
-        count4sub += 1;
-        utilityironCount02.innerHTML = count4sub;
-      }, 100);
-      var ironCounting01 = setInterval(function () {
-        if (count5 == 29) {
-          clearInterval(ironCounting01);
-          return false;
-        }
-        count5 += 1;
-        ironCount01.innerHTML = count5;
-      }, 20);
-      var ironCounting02 = setInterval(function () {
-        if (count5sub == 15) {
-          clearInterval(ironCounting02);
-          return false;
-        }
-        count5sub += 1;
-        ironCount02.innerHTML = count5sub;
-      }, 100);
-      var wedgesCounting01 = setInterval(function () {
-        if (count6 == 55) {
-          clearInterval(wedgesCounting01);
-          return false;
-        }
-        count6 += 1;
-        wedgesCount01.innerHTML = count6;
-      }, 20);
-      var wedgesCounting02 = setInterval(function () {
-        if (count6sub == 11) {
-          clearInterval(wedgesCounting02);
-          return false;
-        }
-        count6sub += 1;
-        wedgesCount02.innerHTML = count6sub;
-      }, 100);
+})({"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+  return bundleURL;
+}
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+    if (matches) {
+      return getBaseURL(matches[0]);
     }
   }
-});
-},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+  return '/';
+}
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+function updateLink(link) {
+  var newLink = link.cloneNode();
+  newLink.onload = function () {
+    link.remove();
+  };
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+var cssTimeout = null;
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+    cssTimeout = null;
+  }, 50);
+}
+module.exports = reloadCSS;
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"scss/index.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"./images\\modularstats-back.jpg":[["modularstats-back.2da0e286.jpg","scss/images/modularstats-back.jpg"],"scss/images/modularstats-back.jpg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -429,5 +341,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/index_js.js"], null)
-//# sourceMappingURL=/index_js.1dbd57a4.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
+//# sourceMappingURL=/scss.b0eb0931.js.map
