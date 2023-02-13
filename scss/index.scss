@@ -64,8 +64,6 @@ body {
   width: 100%;
   background-image: url(./images/modularstats-back.jpg);
   background-attachment: fixed;
-  background-repeat: repeat-y;
-  background-position: 0 25rem;
   background-size: cover;
   .con01 {
     > h2 {
@@ -123,12 +121,13 @@ body {
 }
 .contents02 {
   display: flex;
-
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
   .con02_left {
     width: 50%;
-  }
-  .con02_right {
-    width: 50%;
+    font-weight: bold;
   }
 }
 
@@ -228,21 +227,116 @@ body {
       justify-content: end;
     }
   }
-  .wrap {
-    .visual_main {
-      position: static;
+  .visual_main {
+    position: static;
+  }
+  .contents01 {
+    padding: 40px 1.5rem;
+    box-sizing: border-box;
+    .con01 {
+      .con01_number_box {
+        width: 75%;
+      }
     }
-    .contents01 {
-      padding: 40px 1.5em;
-      box-sizing: border-box;
-      .con01 {
-        .con01_number_box {
-          width: 75%;
+  }
+  .contents02 {
+    display: block;
+    padding: 1.5rem 2.5rem;
+    .con02_left {
+      width: 100%;
+      padding: 1.25rem 0;
+      > p {
+        margin-bottom: 1.25rem;
+      }
+      > h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        word-break: keep-all;
+        > br:nth-child(1) {
+          display: none;
+        }
+        span {
+          color: #aaa;
+          > br {
+            display: none;
+          }
+        }
+      }
+      > a {
+        display: inline-block;
+        padding: 0 2rem;
+        line-height: 2.87rem;
+        background-color: #000;
+        border-radius: 100px;
+        font-weight: bold;
+        color: #fff;
+        font-size: 0.875rem;
+      }
+    }
+    .con02_right {
+      width: 100%;
+      height: 100%;
+      > ul {
+        display: flex;
+        > li {
+          width: 150px;
+          height: auto;
+          position: relative;
+          border-radius: 25px;
+          margin: 5px;
+          > img {
+            width: 150px;
+            border-radius: 25px;
+          }
+          > .con02_right_txt {
+            position: absolute;
+            bottom: 0;
+            padding: 0 0.625rem;
+            > p,
+            span {
+              display: none;
+            }
+            a {
+              display: inline-block;
+              font-weight: bold;
+              text-align: center;
+              padding: 0 0.875rem;
+              margin: 15px 0;
+              color: #fff;
+              background-color: #000;
+              border-radius: 25px;
+              transition: all 0.3s;
+              font-size: 0.875rem;
+            }
+          }
+        }
+        &.con02_itemLeft {
+          animation: leftAni 60s linear infinite normal;
+          @keyframes leftAni {
+            0% {
+              transform: translateX(-100%);
+            }
+            100% {
+              transform: translateX(0%);
+            }
+          }
+        }
+        &.con02_itemRight {
+          animation: rightAni 60s linear infinite reverse;
+          @keyframes rightAni {
+            0% {
+              transform: translateX(-100%);
+            }
+            100% {
+              transform: translateX(0%);
+            }
+          }
         }
       }
     }
   }
 }
+
 @media all and (min-width: 801px) {
   .header {
     position: sticky;
@@ -301,9 +395,118 @@ body {
         margin: 0 auto;
       }
     }
-    .contents02 {
-      padding: 40px 2em;
-      box-sizing: border-box;
+  }
+  .contents02 {
+    height: 637px;
+    padding: 0 2rem;
+    .con02_left {
+      > p {
+        &:nth-child(1) {
+          font-size: 1.125rem;
+          margin-bottom: 2.25rem;
+        }
+      }
+      > h3 {
+        font-size: 2.625rem;
+        margin-bottom: 3rem;
+        > span {
+          color: #aaa;
+        }
+      }
+      > a {
+        display: block;
+        width: 11rem;
+        height: 3.375rem;
+        text-align: center;
+        line-height: 3.375rem;
+        background-color: #000;
+        border-radius: 100px;
+        font-weight: bold;
+        color: #fff;
+      }
+    }
+    .con02_right {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      > ul {
+        width: 50%;
+        > li {
+          color: #fff;
+          position: relative;
+          border-radius: 25px;
+          overflow: hidden;
+          scale: 0.9;
+          > img {
+            width: 100%;
+            height: auto;
+          }
+          > .con02_right_txt {
+            height: auto;
+            position: absolute;
+            bottom: 0;
+            z-index: 1;
+            padding: 0 10px;
+            box-sizing: border-box;
+            > p {
+              font-size: 1.125rem;
+              font-weight: bold;
+            }
+            > span {
+              display: block;
+              font-size: 0.875rem;
+              overflow: hidden;
+              height: 0;
+              opacity: 0;
+              transition: opacity 0.5s;
+            }
+            > a {
+              display: block;
+              width: 160px;
+              font-weight: bold;
+              text-align: center;
+              padding: 6px 0;
+              margin: 15px 0;
+              color: #fff;
+              border: 1px solid #fff;
+              border-radius: 25px;
+              transition: all 0.3s;
+            }
+          }
+          &:hover > .con02_right_txt > span {
+            height: auto;
+            opacity: 1;
+          }
+          &:hover > .con02_right_txt > a {
+            background-color: #e41837;
+            border-color: #e41837;
+          }
+        }
+        &.con02_itemLeft {
+          width: 50%;
+          animation: leftAni 90s linear infinite normal;
+          @keyframes leftAni {
+            0% {
+              transform: translateY(-100%);
+            }
+            100% {
+              transform: translateY(0%);
+            }
+          }
+        }
+        &.con02_itemRight {
+          width: 50%;
+          animation: rightAni 90s linear infinite reverse;
+          @keyframes rightAni {
+            0% {
+              transform: translateY(-100%);
+            }
+            100% {
+              transform: translateY(0%);
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -314,11 +517,23 @@ body {
       min-width: 190px;
     }
   }
+  .contents02 {
+    padding: 0 10rem;
+    height: 877px;
+  }
 }
 
 @media all and (min-width: 1920px) {
   .visual_main {
     height: 58.5625rem;
     overflow: hidden;
+  }
+  .contents02 {
+    .con02_right {
+      height: 100%;
+      > ul {
+        height: 100%;
+      }
+    }
   }
 }

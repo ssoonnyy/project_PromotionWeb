@@ -61,8 +61,6 @@ body {
   width: 100%;
   background-image: url(/modularstats-back.2da0e286.jpg);
   background-attachment: fixed;
-  background-repeat: repeat-y;
-  background-position: 0 25rem;
   background-size: cover;
 }
 .contents01 .con01 > h2 {
@@ -119,12 +117,14 @@ body {
 
 .contents02 {
   display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 .contents02 .con02_left {
   width: 50%;
-}
-.contents02 .con02_right {
-  width: 50%;
+  font-weight: bold;
 }
 
 /* 미디어쿼리 */
@@ -219,15 +219,111 @@ body {
     width: 33%;
     justify-content: end;
   }
-  .wrap .visual_main {
+  .visual_main {
     position: static;
   }
-  .wrap .contents01 {
-    padding: 40px 1.5em;
+  .contents01 {
+    padding: 40px 1.5rem;
     box-sizing: border-box;
   }
-  .wrap .contents01 .con01 .con01_number_box {
+  .contents01 .con01 .con01_number_box {
     width: 75%;
+  }
+  .contents02 {
+    display: block;
+    padding: 1.5rem 2.5rem;
+  }
+  .contents02 .con02_left {
+    width: 100%;
+    padding: 1.25rem 0;
+  }
+  .contents02 .con02_left > p {
+    margin-bottom: 1.25rem;
+  }
+  .contents02 .con02_left > h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    word-break: keep-all;
+  }
+  .contents02 .con02_left > h3 > br:nth-child(1) {
+    display: none;
+  }
+  .contents02 .con02_left > h3 span {
+    color: #aaa;
+  }
+  .contents02 .con02_left > h3 span > br {
+    display: none;
+  }
+  .contents02 .con02_left > a {
+    display: inline-block;
+    padding: 0 2rem;
+    line-height: 2.87rem;
+    background-color: #000;
+    border-radius: 100px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 0.875rem;
+  }
+  .contents02 .con02_right {
+    width: 100%;
+    height: 100%;
+  }
+  .contents02 .con02_right > ul {
+    display: flex;
+  }
+  .contents02 .con02_right > ul > li {
+    width: 150px;
+    height: auto;
+    position: relative;
+    border-radius: 25px;
+    margin: 5px;
+  }
+  .contents02 .con02_right > ul > li > img {
+    width: 150px;
+    border-radius: 25px;
+  }
+  .contents02 .con02_right > ul > li > .con02_right_txt {
+    position: absolute;
+    bottom: 0;
+    padding: 0 0.625rem;
+  }
+  .contents02 .con02_right > ul > li > .con02_right_txt > p,
+  .contents02 .con02_right > ul > li > .con02_right_txt span {
+    display: none;
+  }
+  .contents02 .con02_right > ul > li > .con02_right_txt a {
+    display: inline-block;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 0.875rem;
+    margin: 15px 0;
+    color: #fff;
+    background-color: #000;
+    border-radius: 25px;
+    transition: all 0.3s;
+    font-size: 0.875rem;
+  }
+  .contents02 .con02_right > ul.con02_itemLeft {
+    animation: leftAni 60s linear infinite normal;
+  }
+  @keyframes leftAni {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  .contents02 .con02_right > ul.con02_itemRight {
+    animation: rightAni 60s linear infinite reverse;
+  }
+  @keyframes rightAni {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
   }
 }
 @media all and (min-width: 801px) {
@@ -287,9 +383,114 @@ body {
     max-width: 62.5rem;
     margin: 0 auto;
   }
-  .wrap .contents02 {
-    padding: 40px 2em;
+  .contents02 {
+    height: 637px;
+    padding: 0 2rem;
+  }
+  .contents02 .con02_left > p:nth-child(1) {
+    font-size: 1.125rem;
+    margin-bottom: 2.25rem;
+  }
+  .contents02 .con02_left > h3 {
+    font-size: 2.625rem;
+    margin-bottom: 3rem;
+  }
+  .contents02 .con02_left > h3 > span {
+    color: #aaa;
+  }
+  .contents02 .con02_left > a {
+    display: block;
+    width: 11rem;
+    height: 3.375rem;
+    text-align: center;
+    line-height: 3.375rem;
+    background-color: #000;
+    border-radius: 100px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .contents02 .con02_right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+  }
+  .contents02 .con02_right > ul {
+    width: 50%;
+  }
+  .contents02 .con02_right > ul > li {
+    color: #fff;
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    scale: 0.9;
+  }
+  .contents02 .con02_right > ul > li > img {
+    width: 100%;
+    height: auto;
+  }
+  .contents02 .con02_right > ul > li > .con02_right_txt {
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    padding: 0 10px;
     box-sizing: border-box;
+  }
+  .contents02 .con02_right > ul > li > .con02_right_txt > p {
+    font-size: 1.125rem;
+    font-weight: bold;
+  }
+  .contents02 .con02_right > ul > li > .con02_right_txt > span {
+    display: block;
+    font-size: 0.875rem;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  .contents02 .con02_right > ul > li > .con02_right_txt > a {
+    display: block;
+    width: 160px;
+    font-weight: bold;
+    text-align: center;
+    padding: 6px 0;
+    margin: 15px 0;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    transition: all 0.3s;
+  }
+  .contents02 .con02_right > ul > li:hover > .con02_right_txt > span {
+    height: auto;
+    opacity: 1;
+  }
+  .contents02 .con02_right > ul > li:hover > .con02_right_txt > a {
+    background-color: #e41837;
+    border-color: #e41837;
+  }
+  .contents02 .con02_right > ul.con02_itemLeft {
+    width: 50%;
+    animation: leftAni 90s linear infinite normal;
+  }
+  @keyframes leftAni {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
+  .contents02 .con02_right > ul.con02_itemRight {
+    width: 50%;
+    animation: rightAni 90s linear infinite reverse;
+  }
+  @keyframes rightAni {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
   }
 }
 @media all and (min-width: 1024px) {
@@ -299,11 +500,21 @@ body {
   .header .header_logo {
     min-width: 190px;
   }
+  .contents02 {
+    padding: 0 10rem;
+    height: 877px;
+  }
 }
 @media all and (min-width: 1920px) {
   .visual_main {
     height: 58.5625rem;
     overflow: hidden;
+  }
+  .contents02 .con02_right {
+    height: 100%;
+  }
+  .contents02 .con02_right > ul {
+    height: 100%;
   }
 }
 
