@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "parcel ./index.html",
     "build": "parcel build ./index.html",
-    "predeploy": "npm run build",  
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "keywords": [],
@@ -20,5 +20,5 @@
     "scss": "^0.2.4",
     "scss-loader": "^0.0.1"
   },
-  "homepage": "https://github.com/ssoonnyy/project_PromotionWeb/"
+  "homepage": "https://ssoonnyy.github.io/project_PromotionWeb/"
 }
