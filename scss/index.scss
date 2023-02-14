@@ -23,13 +23,25 @@ html,
 body {
   font-size: 16px;
 }
+body{overscroll-behavior: contain; position: relative;}
 
 /*header*/
+
+
 .header {
+  position: sticky;
+  top: 0;
   display: flex;
+  z-index: 99999999999999999999999999999999999999999;
   transition: background-color 0.3s;
   &.bgChange {
     background-color: #fff;
+  }
+  &.scrolling {
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 999999999999999999999999999999999999;
   }
   > ul {
     display: flex;
@@ -51,7 +63,9 @@ body {
 }
 
 /*main*/
-
+.wrap {
+  position: relative;
+}
 .visual_main {
   width: 100%;
   > video {
@@ -128,6 +142,15 @@ body {
   .con02_left {
     width: 50%;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    >div {
+      display: none;
+    }
+  }
+  .con02_right {
+    width: 50%;
   }
 }
 
@@ -245,33 +268,36 @@ body {
     .con02_left {
       width: 100%;
       padding: 1.25rem 0;
-      > p {
-        margin-bottom: 1.25rem;
-      }
-      > h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-        word-break: keep-all;
-        > br:nth-child(1) {
-          display: none;
+      div{
+        > p {
+          margin-bottom: 1.25rem;
         }
-        span {
-          color: #aaa;
-          > br {
+        > h3 {
+          font-size: 1.5rem;
+          margin-bottom: 1.5rem;
+          word-break: keep-all;
+          > br:nth-child(1) {
             display: none;
           }
+          span {
+            color: #aaa;
+            > br {
+              display: none;
+            }
+          }
+        }
+        > a {
+          display: inline-block;
+          padding: 0 2rem;
+          line-height: 2.87rem;
+          background-color: #000;
+          border-radius: 100px;
+          font-weight: bold;
+          color: #fff;
+          font-size: 0.875rem;
         }
       }
-      > a {
-        display: inline-block;
-        padding: 0 2rem;
-        line-height: 2.87rem;
-        background-color: #000;
-        border-radius: 100px;
-        font-weight: bold;
-        color: #fff;
-        font-size: 0.875rem;
-      }
+     
     }
     .con02_right {
       width: 100%;
@@ -339,9 +365,6 @@ body {
 
 @media all and (min-width: 801px) {
   .header {
-    position: sticky;
-    top: 0;
-    z-index: 9999999999999999999;
     box-sizing: border-box;
     justify-content: space-between;
     .header_logo {
@@ -396,37 +419,40 @@ body {
       }
     }
   }
+
   .contents02 {
     height: 637px;
     padding: 0 2rem;
     .con02_left {
-      > p {
-        &:nth-child(1) {
+      width: 100%; height: 100%;
+      div{
+        > p {
           font-size: 1.125rem;
           margin-bottom: 2.25rem;
         }
-      }
-      > h3 {
-        font-size: 2.625rem;
-        margin-bottom: 3rem;
-        > span {
-          color: #aaa;
+        > h3 {
+          font-size: 2.625rem;
+          margin-bottom: 3rem;
+          > span {
+            color: #aaa;
+          }
+        }
+        > a {
+          display: block;
+          width: 11rem;
+          height: 3.375rem;
+          text-align: center;
+          line-height: 3.375rem;
+          background-color: #000;
+          border-radius: 100px;
+          font-weight: bold;
+          color: #fff;
         }
       }
-      > a {
-        display: block;
-        width: 11rem;
-        height: 3.375rem;
-        text-align: center;
-        line-height: 3.375rem;
-        background-color: #000;
-        border-radius: 100px;
-        font-weight: bold;
-        color: #fff;
-      }
+      
     }
     .con02_right {
-      width: 50%;
+      width: 100%;
       height: 100%;
       display: flex;
       > ul {
@@ -519,7 +545,7 @@ body {
   }
   .contents02 {
     padding: 0 10rem;
-    height: 877px;
+    height: 877px;  
   }
 }
 

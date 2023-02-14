@@ -28,13 +28,27 @@ body {
   font-size: 16px;
 }
 
+body {
+  overscroll-behavior: contain;
+  position: relative;
+}
+
 /*header*/
 .header {
+  position: sticky;
+  top: 0;
   display: flex;
+  z-index: 100000000000000000000000000000000000000000;
   transition: background-color 0.3s;
 }
 .header.bgChange {
   background-color: #fff;
+}
+.header.scrolling {
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000000000000000000000000000000000000;
 }
 .header > ul {
   display: flex;
@@ -49,6 +63,10 @@ body {
 }
 
 /*main*/
+.wrap {
+  position: relative;
+}
+
 .visual_main {
   width: 100%;
 }
@@ -125,6 +143,15 @@ body {
 .contents02 .con02_left {
   width: 50%;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contents02 .con02_left > div {
+  display: none;
+}
+.contents02 .con02_right {
+  width: 50%;
 }
 
 /* 미디어쿼리 */
@@ -237,24 +264,24 @@ body {
     width: 100%;
     padding: 1.25rem 0;
   }
-  .contents02 .con02_left > p {
+  .contents02 .con02_left div > p {
     margin-bottom: 1.25rem;
   }
-  .contents02 .con02_left > h3 {
+  .contents02 .con02_left div > h3 {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     word-break: keep-all;
   }
-  .contents02 .con02_left > h3 > br:nth-child(1) {
+  .contents02 .con02_left div > h3 > br:nth-child(1) {
     display: none;
   }
-  .contents02 .con02_left > h3 span {
+  .contents02 .con02_left div > h3 span {
     color: #aaa;
   }
-  .contents02 .con02_left > h3 span > br {
+  .contents02 .con02_left div > h3 span > br {
     display: none;
   }
-  .contents02 .con02_left > a {
+  .contents02 .con02_left div > a {
     display: inline-block;
     padding: 0 2rem;
     line-height: 2.87rem;
@@ -328,9 +355,6 @@ body {
 }
 @media all and (min-width: 801px) {
   .header {
-    position: sticky;
-    top: 0;
-    z-index: 10000000000000000000;
     box-sizing: border-box;
     justify-content: space-between;
   }
@@ -387,18 +411,22 @@ body {
     height: 637px;
     padding: 0 2rem;
   }
-  .contents02 .con02_left > p:nth-child(1) {
+  .contents02 .con02_left {
+    width: 100%;
+    height: 100%;
+  }
+  .contents02 .con02_left div > p {
     font-size: 1.125rem;
     margin-bottom: 2.25rem;
   }
-  .contents02 .con02_left > h3 {
+  .contents02 .con02_left div > h3 {
     font-size: 2.625rem;
     margin-bottom: 3rem;
   }
-  .contents02 .con02_left > h3 > span {
+  .contents02 .con02_left div > h3 > span {
     color: #aaa;
   }
-  .contents02 .con02_left > a {
+  .contents02 .con02_left div > a {
     display: block;
     width: 11rem;
     height: 3.375rem;
@@ -410,7 +438,7 @@ body {
     color: #fff;
   }
   .contents02 .con02_right {
-    width: 50%;
+    width: 100%;
     height: 100%;
     display: flex;
   }
