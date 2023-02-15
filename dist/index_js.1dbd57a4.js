@@ -128,138 +128,147 @@ document.addEventListener("DOMContentLoaded", function () {
   header.addEventListener("mouseout", function () {
     this.classList.remove("bgChange");
   });
+});
+/* contents01 숫자카운팅 */
 
-  /* contents01 숫자카운팅 */
-  window.onscroll = function () {
-    con01Count();
-  };
-  function con01Count() {
-    var target = document.querySelector(".visual_main");
-    var targetHeight = target.offsetHeight;
-    if (document.body.scrollTop > targetHeight / 2 || document.documentElement.scrollTop > targetHeight / 2) {
-      var ballCount01 = document.querySelector(".num_box01 > .con01_count01");
-      var ballCount02 = document.querySelector(".num_box01 .con01_count02");
-      var driverCount01 = document.querySelector(".num_box02 > .con01_count01");
-      var driverCount02 = document.querySelector(".num_box02 .con01_count02");
-      var hybridsCount01 = document.querySelector(".num_box03 > .con01_count01");
-      var hybridsCount02 = document.querySelector(".num_box03 .con01_count02");
-      var utilityironCount01 = document.querySelector(".num_box04 > .con01_count01");
-      var utilityironCount02 = document.querySelector(".num_box04 .con01_count02");
-      var ironCount01 = document.querySelector(".num_box05 > .con01_count01");
-      var ironCount02 = document.querySelector(".num_box05 .con01_count02");
-      var wedgesCount01 = document.querySelector(".num_box06 > .con01_count01");
-      var wedgesCount02 = document.querySelector(".num_box06 .con01_count02");
-      var count1 = 0;
-      var count1sub = 0;
-      var count2 = 0;
-      var count2sub = 0;
-      var count3 = 0;
-      var count3sub = 0;
-      var count4 = 0;
-      var count4sub = 0;
-      var count5 = 0;
-      var count5sub = 0;
-      var count6 = 0;
-      var count6sub = 0;
-      var ballCounting01 = setInterval(function () {
-        if (count1 == 78) {
-          clearInterval(ballCounting01);
-          return false;
-        }
-        count1 += 1;
-        ballCount01.innerHTML = count1;
-      }, 20);
-      var ballCounting02 = setInterval(function () {
-        if (count1sub == 10) {
-          clearInterval(ballCounting02);
-          return false;
-        }
-        count1sub += 1;
-        ballCount02.innerHTML = count1sub;
-      }, 100);
-      var driverCounting01 = setInterval(function () {
-        if (count2 == 31) {
-          clearInterval(driverCounting01);
-          return false;
-        }
-        count2 += 1;
-        driverCount01.innerHTML = count2;
-      }, 20);
-      var driverCounting02 = setInterval(function () {
-        if (count2sub == 22) {
-          clearInterval(driverCounting02);
-          return false;
-        }
-        count2sub += 1;
-        driverCount02.innerHTML = count2sub;
-      }, 100);
-      var hybridsCounting01 = setInterval(function () {
-        if (count3 == 35) {
-          clearInterval(hybridsCounting01);
-          return false;
-        }
-        count3 += 1;
-        hybridsCount01.innerHTML = count3;
-      }, 20);
-      var hybridsCounting02 = setInterval(function () {
-        if (count3sub == 20) {
-          clearInterval(hybridsCounting02);
-          return false;
-        }
-        count3sub += 1;
-        hybridsCount02.innerHTML = count3sub;
-      }, 100);
-      var utilityironCounting01 = setInterval(function () {
-        if (count4 == 49) {
-          clearInterval(utilityironCounting01);
-          return false;
-        }
-        count4 += 1;
-        utilityironCount01.innerHTML = count4;
-      }, 20);
-      var utilityironCounting02 = setInterval(function () {
-        if (count4sub == 17) {
-          clearInterval(utilityironCounting02);
-          return false;
-        }
-        count4sub += 1;
-        utilityironCount02.innerHTML = count4sub;
-      }, 100);
-      var ironCounting01 = setInterval(function () {
-        if (count5 == 29) {
-          clearInterval(ironCounting01);
-          return false;
-        }
-        count5 += 1;
-        ironCount01.innerHTML = count5;
-      }, 20);
-      var ironCounting02 = setInterval(function () {
-        if (count5sub == 15) {
-          clearInterval(ironCounting02);
-          return false;
-        }
-        count5sub += 1;
-        ironCount02.innerHTML = count5sub;
-      }, 100);
-      var wedgesCounting01 = setInterval(function () {
-        if (count6 == 55) {
-          clearInterval(wedgesCounting01);
-          return false;
-        }
-        count6 += 1;
-        wedgesCount01.innerHTML = count6;
-      }, 20);
-      var wedgesCounting02 = setInterval(function () {
-        if (count6sub == 11) {
-          clearInterval(wedgesCounting02);
-          return false;
-        }
-        count6sub += 1;
-        wedgesCount02.innerHTML = count6sub;
-      }, 100);
+window.addEventListener("scroll", function () {
+  var scrollTarget = document.querySelector("html");
+  if (matchMedia("all and (min-width:1024px)").matches) {
+    if (scrollTarget.scrollTop >= 80 && scrollTarget.scrollTop < 150) {
+      con01Count();
+    }
+  } else if (matchMedia("all and (min-width:801px) and (max-width:1023px)").matches) {
+    if (scrollTarget.scrollTop >= 80 && scrollTarget.scrollTop < 110) {
+      con01Count();
+    }
+  } else if (matchMedia("all and (min-width:320px) and (max-width:800px)").matches) {
+    if (scrollTarget.scrollTop >= 50 && scrollTarget.scrollTop < 75) {
+      con01Count();
     }
   }
 });
+function con01Count() {
+  var ballCount01 = document.querySelector(".num_box01 > .con01_count01");
+  var ballCount02 = document.querySelector(".num_box01 .con01_count02");
+  var driverCount01 = document.querySelector(".num_box02 > .con01_count01");
+  var driverCount02 = document.querySelector(".num_box02 .con01_count02");
+  var hybridsCount01 = document.querySelector(".num_box03 > .con01_count01");
+  var hybridsCount02 = document.querySelector(".num_box03 .con01_count02");
+  var utilityironCount01 = document.querySelector(".num_box04 > .con01_count01");
+  var utilityironCount02 = document.querySelector(".num_box04 .con01_count02");
+  var ironCount01 = document.querySelector(".num_box05 > .con01_count01");
+  var ironCount02 = document.querySelector(".num_box05 .con01_count02");
+  var wedgesCount01 = document.querySelector(".num_box06 > .con01_count01");
+  var wedgesCount02 = document.querySelector(".num_box06 .con01_count02");
+  var count1 = 0;
+  var count1sub = 0;
+  var count2 = 0;
+  var count2sub = 0;
+  var count3 = 0;
+  var count3sub = 0;
+  var count4 = 0;
+  var count4sub = 0;
+  var count5 = 0;
+  var count5sub = 0;
+  var count6 = 0;
+  var count6sub = 0;
+  var ballCounting01 = setInterval(function () {
+    if (count1 == 78) {
+      clearInterval(ballCounting01);
+      return false;
+    }
+    count1 += 1;
+    ballCount01.innerHTML = count1;
+  }, 20);
+  var ballCounting02 = setInterval(function () {
+    if (count1sub == 10) {
+      clearInterval(ballCounting02);
+      return false;
+    }
+    count1sub += 1;
+    ballCount02.innerHTML = count1sub;
+  }, 100);
+  var driverCounting01 = setInterval(function () {
+    if (count2 == 31) {
+      clearInterval(driverCounting01);
+      return false;
+    }
+    count2 += 1;
+    driverCount01.innerHTML = count2;
+  }, 20);
+  var driverCounting02 = setInterval(function () {
+    if (count2sub == 22) {
+      clearInterval(driverCounting02);
+      return false;
+    }
+    count2sub += 1;
+    driverCount02.innerHTML = count2sub;
+  }, 100);
+  var hybridsCounting01 = setInterval(function () {
+    if (count3 == 35) {
+      clearInterval(hybridsCounting01);
+      return false;
+    }
+    count3 += 1;
+    hybridsCount01.innerHTML = count3;
+  }, 20);
+  var hybridsCounting02 = setInterval(function () {
+    if (count3sub == 20) {
+      clearInterval(hybridsCounting02);
+      return false;
+    }
+    count3sub += 1;
+    hybridsCount02.innerHTML = count3sub;
+  }, 100);
+  var utilityironCounting01 = setInterval(function () {
+    if (count4 == 49) {
+      clearInterval(utilityironCounting01);
+      return false;
+    }
+    count4 += 1;
+    utilityironCount01.innerHTML = count4;
+  }, 20);
+  var utilityironCounting02 = setInterval(function () {
+    if (count4sub == 17) {
+      clearInterval(utilityironCounting02);
+      return false;
+    }
+    count4sub += 1;
+    utilityironCount02.innerHTML = count4sub;
+  }, 100);
+  var ironCounting01 = setInterval(function () {
+    if (count5 == 29) {
+      clearInterval(ironCounting01);
+      return false;
+    }
+    count5 += 1;
+    ironCount01.innerHTML = count5;
+  }, 20);
+  var ironCounting02 = setInterval(function () {
+    if (count5sub == 15) {
+      clearInterval(ironCounting02);
+      return false;
+    }
+    count5sub += 1;
+    ironCount02.innerHTML = count5sub;
+  }, 100);
+  var wedgesCounting01 = setInterval(function () {
+    if (count6 == 55) {
+      clearInterval(wedgesCounting01);
+      return false;
+    }
+    count6 += 1;
+    wedgesCount01.innerHTML = count6;
+  }, 20);
+  var wedgesCounting02 = setInterval(function () {
+    if (count6sub == 11) {
+      clearInterval(wedgesCounting02);
+      return false;
+    }
+    count6sub += 1;
+    wedgesCount02.innerHTML = count6sub;
+  }, 100);
+}
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -285,7 +294,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+<<<<<<< HEAD
   var ws = new WebSocket(protocol + '://' + hostname + ':' + "60818" + '/');
+=======
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61109" + '/');
+>>>>>>> 48ccefaa969449cace738572dbf8fae7f33c289c
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
