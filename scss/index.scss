@@ -23,10 +23,12 @@ html,
 body {
   font-size: 16px;
 }
-body{overscroll-behavior: contain; position: relative;}
+body {
+  overscroll-behavior: contain;
+  position: relative;
+}
 
 /*header*/
-
 
 .header {
   position: sticky;
@@ -78,11 +80,8 @@ body{overscroll-behavior: contain; position: relative;}
   width: 100%;
   background-image: url(./images/modularstats-back.jpg);
   background-attachment: fixed;
-<<<<<<< HEAD
   background-repeat: no-repeat;
-  background-position: centerx;
-=======
->>>>>>> 48ccefaa969449cace738572dbf8fae7f33c289c
+  background-position: center;
   background-size: cover;
   .con01 {
     > h2 {
@@ -150,7 +149,7 @@ body{overscroll-behavior: contain; position: relative;}
     display: flex;
     justify-content: center;
     align-items: center;
-    >div {
+    > div {
       display: none;
     }
   }
@@ -273,7 +272,7 @@ body{overscroll-behavior: contain; position: relative;}
     .con02_left {
       width: 100%;
       padding: 1.25rem 0;
-      div{
+      div {
         > p {
           margin-bottom: 1.25rem;
         }
@@ -302,7 +301,6 @@ body{overscroll-behavior: contain; position: relative;}
           font-size: 0.875rem;
         }
       }
-     
     }
     .con02_right {
       width: 100%;
@@ -429,8 +427,9 @@ body{overscroll-behavior: contain; position: relative;}
     height: 637px;
     padding: 0 2rem;
     .con02_left {
-      width: 100%; height: 100%;
-      div{
+      width: 100%;
+      height: 100%;
+      div {
         > p {
           font-size: 1.125rem;
           margin-bottom: 2.25rem;
@@ -454,7 +453,6 @@ body{overscroll-behavior: contain; position: relative;}
           color: #fff;
         }
       }
-      
     }
     .con02_right {
       width: 100%;
@@ -550,7 +548,7 @@ body{overscroll-behavior: contain; position: relative;}
   }
   .contents02 {
     padding: 0 10rem;
-    height: 877px;  
+    height: 877px;
   }
 }
 
