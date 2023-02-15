@@ -61,8 +61,8 @@ body {
   width: 100%;
   background-image: url(/modularstats-back.2da0e286.jpg);
   background-attachment: fixed;
-  background-repeat: repeat-y;
-  background-position: 0 25rem;
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
 .contents01 .con01 > h2 {
