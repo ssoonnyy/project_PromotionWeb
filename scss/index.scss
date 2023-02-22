@@ -65,16 +65,16 @@ body {
 }
 
 /*main*/
-.wrap {
-  position: relative;
-}
+
 .visual_main {
   width: 100%;
   > video {
     width: 100%;
   }
 }
-
+.wrap {
+  position: relative;
+}
 /* contents01 */
 .contents01 {
   width: 100%;
@@ -150,7 +150,8 @@ body {
     justify-content: center;
     align-items: center;
     > div {
-      display: none;
+      opacity: 0;
+      transition: all 3.5s;
     }
   }
   .con02_right {
@@ -408,10 +409,9 @@ body {
       width: 12.5rem;
     }
   }
+
   .wrap {
     width: 100%;
-    position: absolute;
-    top: 0;
     .contents01 {
       padding: 40px 2em;
       box-sizing: border-box;
@@ -545,6 +545,10 @@ body {
     .header_logo {
       min-width: 190px;
     }
+  }
+  .wrap {
+    position: absolute;
+    top: 0;
   }
   .contents02 {
     padding: 0 10rem;

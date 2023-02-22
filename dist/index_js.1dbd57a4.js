@@ -120,7 +120,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"js/index_js.js":[function(require,module,exports) {
 document.addEventListener("DOMContentLoaded", function () {
   var header = document.querySelector(".header");
-
   /* 헤더 마우스 이벤트 */
   header.addEventListener("mouseover", function () {
     this.classList.add("bgChange");
@@ -294,11 +293,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60818" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61109" + '/');
->>>>>>> 48ccefaa969449cace738572dbf8fae7f33c289c
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54430" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

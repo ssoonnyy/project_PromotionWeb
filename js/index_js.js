@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".header");
-
   /* 헤더 마우스 이벤트 */
   header.addEventListener("mouseover", function () {
     this.classList.add("bgChange");
